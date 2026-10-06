@@ -1,3 +1,271 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Rajdhani', sans-serif;
+  line-height: 1.6;
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(0, 243, 255, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 85% 85%, rgba(255, 0, 85, 0.05) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+/* HEADER & NAV */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: rgba(10, 13, 20, 0.9);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0, 243, 255, 0.2);
+}
+
+.logo {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px var(--cyan-glow);
+}
+
+.logo span {
+  color: var(--cyan-glow);
+}
+
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--cyan-glow);
+  text-shadow: 0 0 8px var(--cyan-glow);
+}
+
+/* HERO SECTION */
+.hero {
+  text-align: center;
+  padding: 100px 20px 80px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 15px;
+  background: linear-gradient(135deg, #fff 0%, var(--cyan-glow) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+.hero p {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: transparent;
+  color: var(--cyan-glow);
+  border: 2px solid var(--cyan-glow);
+  border-radius: 4px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: var(--cyan-glow);
+  color: var(--bg-dark);
+  box-shadow: 0 0 25px rgba(0, 243, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+/* MAIN CONTAINER */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.section-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2.2rem;
+  text-align: center;
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--cyan-glow);
+  margin: 10px auto 0;
+  box-shadow: 0 0 10px var(--cyan-glow);
+}
+
+.category-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--cyan-glow);
+  margin: 40px 0 20px;
+  border-left: 4px solid var(--magenta-glow);
+  padding-left: 12px;
+}
+
+/* GRIDS & GREEN SCREEN PLACEHOLDERS */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.green-screen-portrait, 
+.green-screen-landscape, 
+.green-screen-square {
+  background-color: #00ff22; /* Placeholder Green Screen */
+  border-radius: 8px;
+  border: 2px solid rgba(0, 255, 34, 0.5);
+  box-shadow: 0 0 15px rgba(0, 255, 34, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.green-screen-portrait:hover, 
+.green-screen-landscape:hover, 
+.green-screen-square:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 255, 34, 0.5);
+}
+
+.green-screen-portrait { aspect-ratio: 9 / 16; }
+.green-screen-landscape { aspect-ratio: 16 / 9; }
+.green-screen-square { aspect-ratio: 1 / 1; }
+
+.card-label {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--text-main);
+}
+
+/* ABOUT ME CARD */
+.about-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  text-align: center;
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.about-card p {
+  margin-bottom: 15px;
+}
+
+/* CONTACT & SOCIALS */
+.contact-card {
+  background: var(--card-bg);
+  padding: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 0, 85, 0.3);
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+}
+
+.contact-details p {
+  font-size: 1.2rem;
+  margin-bottom: 12px;
+}
+
+.social-buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.btn-social {
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.btn-fb {
+  background: #1877f2;
+  color: #fff;
+}
+
+.btn-msg {
+  background: #0084ff;
+  color: #fff;
+}
+
+.btn-social:hover {
+  opacity: 0.9;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  header { flex-direction: column; gap: 15px; }
+  nav a { margin: 0 10px; }
+}
+
+
 <!-- FEATURED WORK SECTION -->
 <div id="work"></div>
 <h2 class="section-title">FEATURED PROJECTS</h2>
@@ -5,15 +273,15 @@
 <div class="category-title">📱 Short-Form Content (Reels / TikTok / Shorts — 9:16)</div>
 <div class="grid-3">
   <div>
-    <div class="green-screen-portrait"></div>
+    <div class="green-screen-portrait">GREEN SCREEN REEL #1</div>
     <div class="card-label">Short-Form Edit #1</div>
   </div>
   <div>
-    <div class="green-screen-portrait"></div>
+    <div class="green-screen-portrait">GREEN SCREEN REEL #2</div>
     <div class="card-label">Short-Form Edit #2</div>
   </div>
   <div>
-    <div class="green-screen-portrait"></div>
+    <div class="green-screen-portrait">GREEN SCREEN REEL #3</div>
     <div class="card-label">Short-Form Edit #3</div>
   </div>
 </div>
@@ -21,15 +289,15 @@
 <div class="category-title">🎬 Long-Form Content (YouTube Videos — 16:9)</div>
 <div class="grid-3">
   <div>
-    <div class="green-screen-landscape"></div>
+    <div class="green-screen-landscape">GREEN SCREEN VIDEO #1</div>
     <div class="card-label">YouTube Video #1</div>
   </div>
   <div>
-    <div class="green-screen-landscape"></div>
+    <div class="green-screen-landscape">GREEN SCREEN VIDEO #2</div>
     <div class="card-label">YouTube Video #2</div>
   </div>
   <div>
-    <div class="green-screen-landscape"></div>
+    <div class="green-screen-landscape">GREEN SCREEN VIDEO #3</div>
     <div class="card-label">YouTube Video #3</div>
   </div>
 </div>
@@ -37,15 +305,15 @@
 <div class="category-title">🎨 Graphics & Visuals (Thumbnails / Posters — 1:1)</div>
 <div class="grid-3">
   <div>
-    <div class="green-screen-square"></div>
+    <div class="green-screen-square">GREEN SCREEN GRAPHIC #1</div>
     <div class="card-label">Thumbnail / Banner #1</div>
   </div>
   <div>
-    <div class="green-screen-square"></div>
+    <div class="green-screen-square">GREEN SCREEN GRAPHIC #2</div>
     <div class="card-label">Thumbnail / Banner #2</div>
   </div>
   <div>
-    <div class="green-screen-square"></div>
+    <div class="green-screen-square">GREEN SCREEN GRAPHIC #3</div>
     <div class="card-label">Thumbnail / Banner #3</div>
   </div>
 </div>
@@ -61,14 +329,18 @@
   </p>
 </div>
 
+<!-- CONTACT SECTION -->
+<div id="contact"></div>
+<h2 class="section-title">GET IN TOUCH</h2>
+<div class="contact-card">
+  <div class="contact-details">
+    <p>📧 Primary Email: <strong>valdezjohnrommer00@gmail.com</strong></p>
+    <p>✉️ Business Email: <strong>lynxvision002@gmail.com</strong></p>
+    <p>💬 Discord: <strong>lynxxx.1</strong></p>
+  </div>
 
-<div class="contact-details">
-  <p>📧 Primary Email: <strong>valdezjohnrommer00@gmail.com</strong></p>
-  <p>✉️ Business Email: <strong>lynxvision002@gmail.com</strong></p>
-  <p>💬 Discord: <strong>lynxxx.1</strong></p>
-</div>
-
-<div class="social-buttons">
-  <a href="https://www.facebook.com/Vldzrmmr1/" target="_blank" class="btn-social btn-fb">Facebook Profile</a>
-  <a href="https://m.me/Vldzrmmr1" target="_blank" class="btn-social btn-msg">Message on Messenger</a>
+  <div class="social-buttons">
+    <a href="https://www.facebook.com/Vldzrmmr1/" target="_blank" class="btn-social btn-fb">Facebook Profile</a>
+    <a href="https://m.me/Vldzrmmr1" target="_blank" class="btn-social btn-msg">Message on Messenger</a>
+  </div>
 </div>
